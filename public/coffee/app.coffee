@@ -1,7 +1,7 @@
 window.App = App || {}
 
-template = (id) ->
-	_.template( $('#' + id).html())
+# template = (id) ->
+# 	_.template( $('#' + id).html())
 
 
 App =
