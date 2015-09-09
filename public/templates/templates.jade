@@ -1,0 +1,103 @@
+script(type="text/template")#avatar
+	table
+		tbody
+			tr
+				td
+				td
+					a(href="#") <%= link %>
+
+script(type="text/template")#data
+	table
+		tbody
+			tr
+				td
+					table
+						tbody
+							tr
+								td
+									| Role
+							tr
+								td.table__td__title
+									| <%= role %>
+				td
+					table
+						tbody
+							tr
+								td
+									| Annual Sales Objective
+							tr
+								td.table__td__title
+									| <%= annual_sales %>
+			tr
+				td
+					table
+						td
+							tr
+								td
+									| Coach
+							tr
+								td.table__td__title
+									| <%= coach %>
+				td
+					table
+						td
+							tr
+								td
+									| Predicted Sales
+							tr
+								td.table__td__title--red
+									| <%= predicted_sales %>
+
+script(type="text/template")#dates
+	table
+		thead
+			tr
+				th(colspan="2")
+					| Year To Date
+		tbody
+			tr
+				td
+					table
+						tbody
+							tr
+								td
+									table
+										tbody
+											tr
+												td
+													| New Opportunities
+											tr
+												td.table__td__title
+													| <%= new_opp_created %> created - <%= new_opp_expected %> expected
+							tr
+								td
+									table
+										tbody
+											tr
+												td
+													| Closed Won
+											tr
+												td.table__td__title
+													| <%= closed_won_wins %> wins - <%= closed_won_expected %> expected
+				td
+					table
+						tbody
+							tr
+								td
+									table
+										tbody
+											tr
+												td
+													| Sales vs. Target
+											tr
+												td
+													
+											tr
+												td
+													table
+														tbody
+															tr
+																td
+																	| $300,000 / $450,000
+																td.table__td--right
+																	| <%= sales_vs_target_percentage %>

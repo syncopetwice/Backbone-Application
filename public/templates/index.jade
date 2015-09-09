@@ -1,0 +1,19 @@
+doctype html
+html
+	include ./_head.jade
+	body.overflow--hidden
+		include ./_preloader.jade
+		#app
+
+	script(type="text/template")#layout
+		section
+			nav#menu
+				ul
+					li
+						a(href="#") Menu Item
+	include ./script.jade
+	script.
+		$(document).ready(function(){
+			app.start();
+		})
+

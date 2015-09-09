@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300">
+    <link rel="stylesheet" href="../vendor/normalize.css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+  </head>
+  <body class="overflow--hidden">
+    <div id="preloader">
+      <div class="preloader"><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div id="app"></div>
+  </body>
+  <script type="text/template" id="layout">
+    <section>
+      <nav id="menu">
+        <ul>
+          <li><a href="#">Menu Item</a></li>
+        </ul>
+      </nav>
+    </section>
+  </script>
+  <script src="../vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../vendor/underscore/underscore-min.js"></script>
+  <script src="../vendor/backbone/backbone-min.js"></script>
+  <script src="../vendor/marionette/lib/backbone.marionette.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    $(document).ready(function(){
+    	app.start();
+    })
+  </script>
+</html>

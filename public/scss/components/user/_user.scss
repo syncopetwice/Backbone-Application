@@ -1,0 +1,62 @@
+.user {
+	@include clearfix;
+	position: relative;
+	background: #C8E6C9;
+	border-radius: 4px;
+	padding: 20px;
+	table {
+		@include table;
+		td {
+			padding-bottom: 5px;
+		}
+	}
+	.avatar {
+		width: 20%;
+		margin-right: 5%;
+		float: left;
+		table {
+			tbody {
+				td {
+					img {
+						max-height: 120px;
+						border-radius: 4px;
+					}
+					a {
+						display: block;
+						margin-top: 40px;
+						color: #8BC34A;
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+	.data {
+		width: 65%;
+		// margin-right: 5%;
+		float: left;
+		margin-top: 18px;
+	}
+	.dates {
+		width: 40%;
+		float: left;
+		table {
+			thead {
+				th {
+					border-bottom: 1px solid #000;
+					padding-bottom: 5px;
+				}
+			}
+			tbody {
+				tr:first-child {
+					td {
+						padding-top: 3px;
+					}
+				}
+			}
+		}
+	}
+}

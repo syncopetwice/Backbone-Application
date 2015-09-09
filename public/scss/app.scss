@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@import 'mixins';
+@import '../vendor/sass-mq/mq';
+@include mq-add-breakpoint(notebook, 1200px);
+html,
+body {
+	min-height: 100%;
+	height: 100%;
+}
+body {
+	position: relative;
+	font-family: 'Roboto Condensed', sans-serif;
+	// padding-top: 50px;
+	font-size: 14px;
+	background: #f7f7f7;
+	.container {
+		width: 1200px;
+		margin: 0px auto;
+		@include mq($until: notebook) {
+			width: 100%;
+		}
+		@import 'components/user/user';
+	}
+	@import 'components/preloader';
+}
