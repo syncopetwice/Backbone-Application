@@ -1,7 +1,7 @@
 .user {
 	@include clearfix;
 	position: relative;
-	background: #C8E6C9;
+	background: #DCEDC8;
 	border-radius: 4px;
 	padding: 20px;
 	table {
@@ -11,8 +11,7 @@
 		}
 	}
 	.avatar {
-		width: 20%;
-		margin-right: 5%;
+		width: 25%;
 		float: left;
 		table {
 			tbody {
@@ -24,7 +23,8 @@
 					a {
 						display: block;
 						margin-top: 40px;
-						color: #8BC34A;
+						color: #689F38;
+						font-weight: bold;
 						text-decoration: none;
 						&:hover {
 							text-decoration: underline;
@@ -35,13 +35,13 @@
 		}
 	}
 	.data {
-		width: 65%;
+		width: 40%;
 		// margin-right: 5%;
 		float: left;
 		margin-top: 18px;
 	}
 	.dates {
-		width: 40%;
+		width: 35%;
 		float: left;
 		table {
 			thead {

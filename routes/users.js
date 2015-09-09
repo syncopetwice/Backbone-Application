@@ -4,16 +4,10 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   var js = JSON.stringify(
-  [
-  {
-    name: "Oleja",
-    money: "800"
-  },
-  {
-    name: "Leha",
-    money: "1500"
-  }
-  ]
+    {
+      user_name: "Oleja Drozdov",
+      user_image: "http://www.iconpot.com/icon/preview/male-user-avatar.jpg"
+    }
   );
   res.send(js);
 });

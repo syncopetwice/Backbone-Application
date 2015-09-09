@@ -7,29 +7,170 @@
     <link rel="stylesheet" href="../vendor/normalize.css/normalize.css">
     <link rel="stylesheet" href="../assets/css/app.css">
   </head>
-  <body class="overflow--hidden">
+  <body>
     <div id="preloader">
       <div class="preloader"><span></span><span></span><span></span><span></span><span></span></div>
     </div>
-    <div id="app"></div>
+    <div id="app">
+      <div class="container">
+        <div class="user">
+          <div class="avatar"></div>
+          <div class="data"></div>
+          <div class="dates"></div>
+        </div>
+      </div>
+    </div>
   </body>
-  <script type="text/template" id="layout">
-    <section>
-      <nav id="menu">
-        <ul>
-          <li><a href="#">Menu Item</a></li>
-        </ul>
-      </nav>
-    </section>
+  <script type="text/template" id="avatar">
+    <table>
+      <tbody>
+        <tr>
+          <td><img src="<%= user_image %>" alt="" class="img-resposive"></td>
+          <td><a href="<%= user_name_href %>" target="_blank"><%= user_name %></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </script>
+  <script type="text/template" id="data">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Role</td>
+                </tr>
+                <tr>
+                  <td class="table__td__title"><%= data_role %></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Annual Sales Objective</td>
+                </tr>
+                <tr>
+                  <td class="table__td__title"><%= data_annual_sales %></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <td>
+                <tr>
+                  <td>Coach</td>
+                </tr>
+                <tr>
+                  <td class="table__td__title"><%= data_coach %></td>
+                </tr>
+              </td>
+            </table>
+          </td>
+          <td>
+            <table>
+              <td>
+                <tr>
+                  <td>Predicted Sales</td>
+                </tr>
+                <tr>
+                  <td class="table__td__title--red"><%= data_predicted_sales %></td>
+                </tr>
+              </td>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </script>
+  <script type="text/template" id="dates">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Year To Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>New Opportunities</td>
+                        </tr>
+                        <tr>
+                          <td class="table__td__title"><%= new_opp_created %> created - <%= new_opp_expected %> expected</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>Closed Won</td>
+                        </tr>
+                        <tr>
+                          <td class="table__td__title"><%= closed_won_wins %> wins - <%= closed_won_expected %> expected</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>Sales vs. Target</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <table>
+                              <tbody>
+                                <tr>
+                                  <td>$<%= dates_sales %> / $<%= dates_target %></td>
+                                  <td class="table__td--right"><%= sales_vs_target_percentage %></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </script>
   <script src="../vendor/jquery/dist/jquery.min.js"></script>
   <script src="../vendor/underscore/underscore-min.js"></script>
   <script src="../vendor/backbone/backbone-min.js"></script>
   <script src="../vendor/marionette/lib/backbone.marionette.min.js"></script>
   <script src="js/app.js"></script>
-  <script>
-    $(document).ready(function(){
-    	app.start();
-    })
-  </script>
 </html>

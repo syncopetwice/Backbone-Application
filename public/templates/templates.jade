@@ -3,8 +3,9 @@ script(type="text/template")#avatar
 		tbody
 			tr
 				td
+					img.img-resposive(src!="<%= user_image %>", alt="")
 				td
-					a(href="#") <%= link %>
+					a(href!="<%= user_name_href %>", target="_blank") <%= user_name %>
 
 script(type="text/template")#data
 	table
@@ -18,7 +19,7 @@ script(type="text/template")#data
 									| Role
 							tr
 								td.table__td__title
-									| <%= role %>
+									| <%= data_role %>
 				td
 					table
 						tbody
@@ -27,7 +28,7 @@ script(type="text/template")#data
 									| Annual Sales Objective
 							tr
 								td.table__td__title
-									| <%= annual_sales %>
+									| <%= data_annual_sales %>
 			tr
 				td
 					table
@@ -37,7 +38,7 @@ script(type="text/template")#data
 									| Coach
 							tr
 								td.table__td__title
-									| <%= coach %>
+									| <%= data_coach %>
 				td
 					table
 						td
@@ -46,7 +47,7 @@ script(type="text/template")#data
 									| Predicted Sales
 							tr
 								td.table__td__title--red
-									| <%= predicted_sales %>
+									| <%= data_predicted_sales %>
 
 script(type="text/template")#dates
 	table
@@ -98,6 +99,6 @@ script(type="text/template")#dates
 														tbody
 															tr
 																td
-																	| $300,000 / $450,000
+																	| $<%= dates_sales %> / $<%= dates_target %>
 																td.table__td--right
 																	| <%= sales_vs_target_percentage %>
