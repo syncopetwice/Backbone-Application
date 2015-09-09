@@ -13,6 +13,7 @@ class App.Models.User extends Backbone.Model
 	initialize: ->
 		console.log ':: App.Models.User'
 
+
 userModel = new App.Models.User
 	user_name: 'Oleja Drozdovsky'
 	user_name_href: 'https://google.com'
@@ -34,7 +35,12 @@ class App.Collections.User extends Backbone.Collection
 	initialize: ->
 		console.log ':: App.Collections.User'
 	model: App.Models.User
-	url: 'http://localhost:3000/users'
+	url: '../users'
+
+
+appCollectionsUser = new App.Collections.User
+appCollectionsUser.fetch()
+console.log appCollectionsUser.size()
 
 ###
 	Parent
@@ -44,13 +50,18 @@ class App.Views.User extends Backbone.View
 	model: userModel
 
 	initialize: ->
-		console.log ':: App.Views.User'
-		console.log @el
 		@render()
 
 	render: ->
 		@$el.html(@template(@model.toJSON()))
 		@
+
+	events: ->
+		'click a' : 'link'
+
+	link: (event) ->
+		event.preventDefault()
+		console.log 'click'
 
 ###
 	Childs Extends Parent

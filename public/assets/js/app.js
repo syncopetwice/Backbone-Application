@@ -1,4 +1,4 @@
-var App, template, userAvatar, userData, userDates, userModel,
+var App, appCollectionsUser, template, userAvatar, userData, userDates, userModel,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
 
@@ -59,11 +59,17 @@ App.Collections.User = (function(superClass) {
 
   User.prototype.model = App.Models.User;
 
-  User.prototype.url = 'http://localhost:3000/users';
+  User.prototype.url = '../users';
 
   return User;
 
 })(Backbone.Collection);
+
+appCollectionsUser = new App.Collections.User;
+
+appCollectionsUser.fetch();
+
+console.log(appCollectionsUser.size());
 
 
 /*
@@ -80,14 +86,23 @@ App.Views.User = (function(superClass) {
   User.prototype.model = userModel;
 
   User.prototype.initialize = function() {
-    console.log(':: App.Views.User');
-    console.log(this.el);
     return this.render();
   };
 
   User.prototype.render = function() {
     this.$el.html(this.template(this.model.toJSON()));
     return this;
+  };
+
+  User.prototype.events = function() {
+    return {
+      'click a': 'link'
+    };
+  };
+
+  User.prototype.link = function(event) {
+    event.preventDefault();
+    return console.log('click');
   };
 
   return User;
