@@ -1,5 +1,9 @@
 window.App = App || {}
 
+template = (id) ->
+	_.template( $('#' + id).html())
+
+
 App =
 	Models: {}
 	Collections: {}
@@ -32,11 +36,12 @@ class App.Collections.User extends Backbone.Collection
 	model: App.Models.User
 	url: 'http://localhost:3000/users'
 
-class App.Views.User_Avatar extends Backbone.View
+###
+	Parent
+###
+class App.Views.User extends Backbone.View
 
-	template: _.template($('#avatar').html())
-
-	el: $('.avatar')
+	model: userModel
 
 	initialize: ->
 		console.log ':: App.Views.User'
@@ -47,40 +52,39 @@ class App.Views.User_Avatar extends Backbone.View
 		@$el.html(@template(@model.toJSON()))
 		@
 
-class App.Views.User_Data extends Backbone.View
+###
+	Childs Extends Parent
+###
+
+###
+	User Avatar View
+###
+class App.Views.User.Avatar extends App.Views.User
+
+	template: _.template($('#avatar').html())
+
+	el: $('.avatar')
+
+###
+	User Data View
+###
+class App.Views.User.Data extends App.Views.User
 
 	template: _.template($('#data').html())
 
 	el: $('.data')
 
-	initialize: ->
-		console.log ':: App.Views.User_Data'
-		console.log @el
-		@render()
-
-	render: ->
-		@$el.html(@template(@model.toJSON()))
-		@
-
-class App.Views.User_Dates extends Backbone.View
+###
+	User Dates View
+###
+class App.Views.User.Dates extends App.Views.User
 
 	template: _.template($('#dates').html())
 
 	el: $('.dates')
 
-	initialize: ->
-		console.log ':: App.Views.User_Dates'
-		console.log @el
-		@render()
+userAvatar = new App.Views.User.Avatar
+userData = new App.Views.User.Data
+userDates = new App.Views.User.Dates
 
-	render: ->
-		@$el.html(@template(@model.toJSON()))
-		@
-
-user_avatar = new App.Views.User_Avatar
-	model: userModel
-user_data = new App.Views.User_Data
-	model: userModel
-user_dates = new App.Views.User_Dates
-	model: userModel
 
