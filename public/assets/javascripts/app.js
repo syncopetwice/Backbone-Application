@@ -1,4 +1,4 @@
-var App, appCollectionsUser, userAvatar, userData, userDates, userModel,
+var App, appCollectionsUser, userAvatar, userModel,
   extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   hasProp = {}.hasOwnProperty;
 
@@ -17,29 +17,16 @@ App.Models.User = (function(superClass) {
     return User.__super__.constructor.apply(this, arguments);
   }
 
-  User.prototype.initialize = function() {
-    return console.log(':: App.Models.User');
-  };
+  User.prototype.initialize = function() {};
 
   return User;
 
 })(Backbone.Model);
 
 userModel = new App.Models.User({
-  user_name: 'Oleja Drozdovsky',
+  user_name: 'BLBSR',
   user_name_href: 'https://google.com',
-  user_image: 'http://orig01.deviantart.net/e483/f/2012/189/8/f/chibi_bulbasaur_by_o_melet-d56ijzg.png',
-  data_role: "Backbone Developer",
-  data_annual_sales: "1,000,000",
-  data_coach: "Michael Scott",
-  data_predicted_sales: "1,500,000",
-  new_opp_created: 9,
-  new_opp_expected: 12,
-  closed_won_wins: 7,
-  closed_won_expected: 9,
-  sales_vs_target_percentage: '25%',
-  dates_sales: 300000,
-  dates_target: 450000
+  user_image: 'http://orig01.deviantart.net/e483/f/2012/189/8/f/chibi_bulbasaur_by_o_melet-d56ijzg.png'
 });
 
 App.Collections.User = (function(superClass) {
@@ -49,13 +36,11 @@ App.Collections.User = (function(superClass) {
     return User.__super__.constructor.apply(this, arguments);
   }
 
-  User.prototype.initialize = function() {
-    return console.log(':: App.Collections.User');
-  };
+  User.prototype.initialize = function() {};
 
   User.prototype.model = App.Models.User;
 
-  User.prototype.url = '../users';
+  User.prototype.url = '/users';
 
   return User;
 
@@ -64,8 +49,6 @@ App.Collections.User = (function(superClass) {
 appCollectionsUser = new App.Collections.User;
 
 appCollectionsUser.fetch();
-
-console.log(appCollectionsUser.size());
 
 
 /*
@@ -79,7 +62,7 @@ App.Views.User = (function(superClass) {
     return User.__super__.constructor.apply(this, arguments);
   }
 
-  User.prototype.model = userModel;
+  User.prototype.model = appCollectionsUser;
 
   User.prototype.initialize = function() {
     return this.render();
@@ -88,17 +71,6 @@ App.Views.User = (function(superClass) {
   User.prototype.render = function() {
     this.$el.html(this.template(this.model.toJSON()));
     return this;
-  };
-
-  User.prototype.events = function() {
-    return {
-      'click a': 'link'
-    };
-  };
-
-  User.prototype.link = function(event) {
-    event.preventDefault();
-    return console.log('click');
   };
 
   return User;
@@ -171,7 +143,3 @@ App.Views.User.Dates = (function(superClass) {
 })(App.Views.User);
 
 userAvatar = new App.Views.User.Avatar;
-
-userData = new App.Views.User.Data;
-
-userDates = new App.Views.User.Dates;

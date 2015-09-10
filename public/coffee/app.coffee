@@ -1,9 +1,5 @@
 window.App = App || {}
 
-# template = (id) ->
-# 	_.template( $('#' + id).html())
-
-
 App =
 	Models: {}
 	Collections: {}
@@ -11,57 +7,51 @@ App =
 
 class App.Models.User extends Backbone.Model
 	initialize: ->
-		console.log ':: App.Models.User'
-
+		# console.log ':: App.Models.User'
 
 userModel = new App.Models.User
-	user_name: 'Oleja Drozdovsky'
+	user_name: 'BLBSR'
 	user_name_href: 'https://google.com'
 	user_image: 'http://orig01.deviantart.net/e483/f/2012/189/8/f/chibi_bulbasaur_by_o_melet-d56ijzg.png'
-	data_role: "Backbone Developer"
-	data_annual_sales: "1,000,000"
-	data_coach: "Michael Scott"
-	data_predicted_sales: "1,500,000"
-	new_opp_created: 9
-	new_opp_expected: 12
-	closed_won_wins: 7
-	closed_won_expected: 9
-	sales_vs_target_percentage: '25%'
-	dates_sales: 300000
-	dates_target: 450000
+	# data_role: "Backbone Developer"
+	# data_annual_sales: "1,000,000"
+	# data_coach: "Michael Scott"
+	# data_predicted_sales: "1,500,000"
+	# new_opp_created: 9
+	# new_opp_expected: 12
+	# closed_won_wins: 7
+	# closed_won_expected: 9
+	# sales_vs_target_percentage: '25%'
+	# dates_sales: 300000
+	# dates_target: 450000
+
 
 
 class App.Collections.User extends Backbone.Collection
 	initialize: ->
-		console.log ':: App.Collections.User'
+		# console.log ':: App.Collections.User'
 	model: App.Models.User
-	url: '../users'
-
+	url: '/users'
 
 appCollectionsUser = new App.Collections.User
 appCollectionsUser.fetch()
-console.log appCollectionsUser.size()
+
 
 ###
 	Parent
 ###
 class App.Views.User extends Backbone.View
 
-	model: userModel
+	model: appCollectionsUser
 
 	initialize: ->
 		@render()
+
 
 	render: ->
 		@$el.html(@template(@model.toJSON()))
 		@
 
-	events: ->
-		'click a' : 'link'
-
-	link: (event) ->
-		event.preventDefault()
-		console.log 'click'
 
 ###
 	Childs Extends Parent
@@ -95,7 +85,7 @@ class App.Views.User.Dates extends App.Views.User
 	el: $('.dates')
 
 userAvatar = new App.Views.User.Avatar
-userData = new App.Views.User.Data
-userDates = new App.Views.User.Dates
+# userData = new App.Views.User.Data
+# userDates = new App.Views.User.Dates
 
 

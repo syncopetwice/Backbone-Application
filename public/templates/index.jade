@@ -1,14 +1,13 @@
 doctype html
 html
-	include ./_head.jade
+	include ./elements/_head.jade
 	body
-		include ./_preloader.jade
+		include ./components/_preloader.jade
 		#app
 			.container
 				.user
 					.avatar
 					.data
 					.dates
-	include ./templates.jade
-	include ./scripts.jade
-
+	include ./elements/templates.jade
+	include ./elements/scripts.jade
