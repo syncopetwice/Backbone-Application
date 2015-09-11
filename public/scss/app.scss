@@ -9,7 +9,7 @@ body {
 body {
 	position: relative;
 	font-family: 'Roboto Condensed', sans-serif;
-	padding-top: 50px;
+	padding: 50px;
 	font-size: 14px;
 	background-color: #ffffff;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#fafafa));
@@ -17,6 +17,7 @@ body {
 	background-image:    -moz-linear-gradient(top, #f1f1f1, #fafafa);
 	background-image:      -o-linear-gradient(top, #f1f1f1, #fafafa);
 	background-image:         linear-gradient(to bottom, #f1f1f1, #fafafa);
+	@import 'components/table/table';
 	.container {
 		width: 1200px;
 		margin: 0px auto;

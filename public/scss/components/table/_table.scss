@@ -1,0 +1,29 @@
+table.table {
+	width: 100%;
+	border: 1px solid #bbb;
+	thead {
+		tr {
+			th {
+				padding: 10px;
+				background:#f7f7f7;
+				border-bottom: 1px solid #bbb;
+				a {
+					color: #333;
+					text-decoration: none;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	tbody {
+		tr {
+			td {
+				padding: 10px;
+				text-align: center;
+				border-bottom: 1px solid #bbb;
+			}
+		}
+	}
+}

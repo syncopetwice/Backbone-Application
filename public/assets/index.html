@@ -11,15 +11,7 @@
     <div id="preloader">
       <div class="preloader"><span></span><span></span><span></span><span></span><span></span></div>
     </div>
-    <div id="app">
-      <div class="container">
-        <div class="user">
-          <div class="avatar"></div>
-          <div class="data"></div>
-          <div class="dates"></div>
-        </div>
-      </div>
-    </div>
+    <div id="table-region"></div>
   </body>
   <script type="text/template" id="avatar">
     <table>
@@ -167,6 +159,27 @@
         </tr>
       </tbody>
     </table>
+  </script>
+  <script type="text/template" id="table"></script>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Money</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script type="text/template" id="table-row">
+    <tr>
+      <td><%= name %></td>
+      <td><%= money %></td>
+    </tr>
+  </script>
+  <script type="text/template" id="empty-view">
+    <tr>
+      <td colspan="2">No users found</td>
+    </tr>
   </script>
   <script src="./javascripts/vendor/js.vendor.min.js"></script>
   <script src="./javascripts/app.js"></script>

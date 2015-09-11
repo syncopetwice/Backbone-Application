@@ -1,0 +1,8 @@
+script(type="text/template")#avatar
+	table
+		tbody
+			tr
+				td
+					img.img-resposive(src!="<%= user_image %>", alt="")
+				td
+					a(href!="<%= user_name_href %>", target="_blank") <%= user_name %>

@@ -1,0 +1,41 @@
+script(type="text/template")#data
+	table
+		tbody
+			tr
+				td
+					table
+						tbody
+							tr
+								td
+									| Role
+							tr
+								td.table__td__title
+									| <%= data_role %>
+				td
+					table
+						tbody
+							tr
+								td
+									| Annual Sales Objective
+							tr
+								td.table__td__title
+									| <%= data_annual_sales %>
+			tr
+				td
+					table
+						td
+							tr
+								td
+									| Coach
+							tr
+								td.table__td__title
+									| <%= data_coach %>
+				td
+					table
+						td
+							tr
+								td
+									| Predicted Sales
+							tr
+								td.table__td__title--red
+									| <%= data_predicted_sales %>
