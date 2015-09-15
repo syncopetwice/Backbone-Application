@@ -18,7 +18,7 @@ var
 	// Start the server
 	gulp.task('connect', function() {
 		connect.server ({
-			port: 3001,
+			port: 3000,
 			livereload: true,
 		});
 	});
@@ -55,6 +55,7 @@ var
 		return gulp.src(
 				[
 					'vendor/jquery/dist/jquery.min.js',
+					'vendor/json2/json2.js',
 					'vendor/underscore/underscore-min.js',
 					'vendor/backbone/backbone-min.js',
 					'vendor/marionette/lib/backbone.marionette.min.js'

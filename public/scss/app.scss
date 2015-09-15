@@ -2,21 +2,13 @@
 @import 'mixins';
 @import '../vendor/sass-mq/mq';
 @include mq-add-breakpoint(notebook, 1200px);
-html,
-body {
-	min-height: 100%;
-}
+
 body {
 	position: relative;
 	font-family: 'Roboto Condensed', sans-serif;
 	padding: 50px;
 	font-size: 14px;
 	background-color: #ffffff;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#fafafa));
-	background-image: -webkit-linear-gradient(top, #f1f1f1, #fafafa);
-	background-image:    -moz-linear-gradient(top, #f1f1f1, #fafafa);
-	background-image:      -o-linear-gradient(top, #f1f1f1, #fafafa);
-	background-image:         linear-gradient(to bottom, #f1f1f1, #fafafa);
 	@import 'components/table/table';
 	.container {
 		width: 1200px;
@@ -24,7 +16,5 @@ body {
 		@include mq($until: notebook) {
 			width: 100%;
 		}
-		@import 'components/user/user';
 	}
-	@import 'components/preloader';
 }
